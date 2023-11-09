@@ -1,0 +1,20 @@
+{
+  "name": "gallery-of-loaders",
+  "version": "1.0.0",
+  "description": "A place too keep old loaders for public viewing.",
+  "main": "index.js",
+  "scripts": {
+    "index": "node generate_index_json.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tspringborg/gallery-of-loaders.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tspringborg/gallery-of-loaders/issues"
+  },
+  "homepage": "https://github.com/tspringborg/gallery-of-loaders#readme"
+}
