@@ -6,11 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Gallery of loaders</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   </head>
   <body>
   <div id="iframe-container">
     <iframe id="content-iframe" src=""></iframe>
   </div>
+    <iframe id="iframe-preload" src=""></iframe>
   <div id="navigation-bar">
     <div id="left-arrow" onclick="navigate(-1)">◄</div>
     <button onclick="navigateRandom()">Random</button>

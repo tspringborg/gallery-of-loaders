@@ -9,6 +9,9 @@ body {
 #iframe-container {
     flex: 1;
 }
+#iframe-preload {
+    display: none;
+}
 
 #navigation-bar {
     display: flex;

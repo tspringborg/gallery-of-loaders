@@ -2,15 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!-- title will be displayed in loader info -->
+    <title>Example loader</title>
+    <!-- about will be displayed in loader info -->
+    <meta name="loader_about" content="This is just an example loader">
+    <!-- clickable link in loader info -->
+    <meta name="loader_link" content="https://github.com/tspringborg/gallery-of-loaders">
+    <!-- control the duration this loader should be displayed. Max 11000(ms) -->
+    <meta name="loader_duration" content="7000">
 </head>
-<body>
 
+<body>
+<h1 id="loader">0%</h1>
+<script>
+    const startTime = new Date().getTime();
+    const duration = 7000;
+    const el = document.getElementById('loader');
+    const interval = setInterval(() => {
+        const time = new Date().getTime();
+        const elapsed = time - startTime;
+        const percent = Math.min(elapsed / duration, 1);
+        let str = (percent * 100).toString()
+        str = str.split('.')[0]
+        while (str.length<2) {
+            str = `0${str}`;
+        }
+        el.innerText = `${str}%`
+
+    }, 100)
+</script>
 </body>
 
+
+
 <style>
-  body {
-    background-color: aquamarine;
-  }:wq:Q
+    html, body {
+        height: 100%
+    }
+    body {
+        background-color: aquamarine;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: whitesmoke;
+        text-align: center;
+    }
+    h1 {
+      font-size: 10em;
+    }
 </style>
 </html>
