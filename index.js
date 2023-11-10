@@ -20,7 +20,6 @@ fetch('index.json').then(async (res) => {
     const indexJson = await res.json()
     paths = paths.concat(indexJson.map(p => `loaders/${p}`)).sort(() => Math.random() - 0.5)
     iframe.src = paths[currentIndex];
-    await overlayFadeOut();
 })
 
 iframe.onload = function () {
@@ -42,6 +41,7 @@ iframe.onload = function () {
         }
     });
     if (timerEnabled) startTimer();
+    overlayFadeOut();
 };
 
 
@@ -66,7 +66,6 @@ async function navigate(direction) {
     await overlayFadeIn();
     currentIndex = stepIndex(direction);
     iframe.src = paths[currentIndex];
-    await overlayFadeOut();
 }
 async function navigateRandom() {
     return navigate(randomIndex());
