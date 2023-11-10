@@ -64,11 +64,8 @@ function stepIndex(step) {
 async function navigate(direction) {
     if (nextTimer) clearTimeout(nextTimer)
     await overlayFadeIn();
-    iframe.src = '';
     currentIndex = stepIndex(direction);
-    requestAnimationFrame(() => {
-        iframe.src = paths[currentIndex];
-    })
+    iframe.src = paths[currentIndex];
     await overlayFadeOut();
     return
 
@@ -94,7 +91,11 @@ async function overlayFadeIn() {
                 ease: "circ.out",
                 duration: 0.5,
                 opacity: 1,
-                onComplete: resolve,
+                onComplete: () => {
+                    frameDoc = iframe.contentDocument || iframe.contentWindow.document;
+                    frameDoc.removeChild(frameDoc.documentElement);
+                    resolve()
+                },
             }
         )
     })
