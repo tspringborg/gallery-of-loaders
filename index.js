@@ -67,8 +67,6 @@ async function navigate(direction) {
     currentIndex = stepIndex(direction);
     iframe.src = paths[currentIndex];
     await overlayFadeOut();
-    return
-
 }
 async function navigateRandom() {
     return navigate(randomIndex());
