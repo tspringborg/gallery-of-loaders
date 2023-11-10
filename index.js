@@ -46,7 +46,7 @@ iframe.onload = function () {
 
 
 function startTimer() {
-    const duration = loaderMeta.duration ? parseInt(loaderMeta.duration) : 5000;
+    const duration = loaderMeta.duration ? parseInt(loaderMeta.loader_duration) : 5000;
     nextTimer = setTimeout(() => {
         navigate(1);
     }, Math.min(duration, 11000));
