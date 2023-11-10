@@ -16,9 +16,9 @@ body {
 #navigation-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #333;
     padding: 10px;
-    color: #fff;
+    width: 100%;
+    border-radius: 0;
 }
 
 iframe {
@@ -29,4 +29,55 @@ iframe {
 
 #left-arrow, #right-arrow {
     cursor: pointer;
+}
+
+.box {
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 32px;
+    background: linear-gradient(120deg, #e8eef8, #dee7f2);
+    background-clip: padding-box;
+    border: 1px solid transparent;
+    box-shadow: 16px 16px 32px #c5d0dd;
+}
+div.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    content: "";
+    margin: -1px;
+    border-radius: inherit;
+    background: linear-gradient(140deg, #fff 20%, transparent 50%), linear-gradient(-25deg, rgba(152, 165, 179, 0.54), #d9e3ec 20%, transparent 50%);
+}
+
+.button {
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    text-align: center;
+    border-radius: 20px;
+    border: 0;
+    background: linear-gradient(100deg, #d8e1ed, #e3ecf5);
+    box-shadow: -12px -12px 16px rgba(255, 255, 255, 0.54), 12px 12px 16px 4px #d4dfe9;
+    color: rgba(165, 183, 207, 0.54);
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.2s linear;
+}
+.button:active {
+    background: linear-gradient(120deg, #c5d1e0, #d7e2ee 20%, #e5edf6 80%, #fcfdfe);
+    box-shadow: -12px -12px 16px rgba(255, 255, 255, 0.3), 12px 12px 16px 4px rgba(211, 222, 232, 0.54);
+    color: rgba(165, 183, 207, 0.48);
 }

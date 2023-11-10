@@ -3,7 +3,7 @@ let paths = [];
 let currentIndex = 0;
 let nextTimer;
 let loaderMeta = {}
-let timerEnabled = true;
+let timerEnabled = false;
 
 const overlayDiv = document.createElement('div');
 overlayDiv.style.position = 'fixed';
@@ -40,8 +40,9 @@ iframe.onload = function () {
             loaderMeta[name] = content;
         }
     });
-    if (timerEnabled) startTimer();
+    console.log(loaderMeta);
     overlayFadeOut();
+    if (timerEnabled) startTimer();
 };
 
 
@@ -57,7 +58,11 @@ function randomIndex() {
 }
 function stepIndex(step) {
     let next = currentIndex + step;
+    if (next < 0) {
+        next = paths.length - next;
+    }
     next = next % paths.length;
+    console.log(next);
     return next;
 }
 
@@ -99,7 +104,6 @@ async function overlayFadeIn() {
 }
 async function overlayFadeOut() {
     return new Promise((resolve) => {
-        console.log('fadeout')
         document.body.appendChild(overlayDiv);
         gsap.to(
             overlayDiv, {
