@@ -64,10 +64,14 @@ function stepIndex(step) {
 async function navigate(direction) {
     if (nextTimer) clearTimeout(nextTimer)
     await overlayFadeIn();
+    iframe.src = '';
     currentIndex = stepIndex(direction);
-    iframe.src = paths[currentIndex];
+    requestAnimationFrame(() => {
+        iframe.src = paths[currentIndex];
+    })
     await overlayFadeOut();
     return
+
 }
 async function navigateRandom() {
     return navigate(randomIndex());
