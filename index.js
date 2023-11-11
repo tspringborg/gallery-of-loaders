@@ -47,8 +47,12 @@ iframe.onload = function () {
         ${loaderMeta.loader_about ? `<p>${loaderMeta.loader_about}</p>` : ''}
         ${loaderMeta.loader_link ? `<a href="loaderMeta.loader_link" target="_blank">${loaderMeta.loader_link}</a>` : ''}
     `
+    meta.classList.remove('animate-in')
     overlayFadeOut();
     if (timerEnabled) startTimer();
+    setTimeout(() => {
+        meta.classList.add('animate-in')
+    }, 400)
 };
 
 

@@ -18,15 +18,31 @@ button {
 }
 #loadermeta {
     position: absolute;
-    top: 0;
+    bottom: 50px;
     left: 0;
-    padding: 0.5em;
+    padding: 1.5em;
+    background-color: black;
+    font-family: "Courier New", serif;
+    font-size: 0.9rem;
+    color: cyan;
+    max-width: 200px;
+    word-break: break-word;
+    transform: translateX(-100%);
+    transition: all 500ms cubic-bezier(0.175, 0.885, 0.335, 1.100); /* custom */
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.335, 1.100); /* custom */
+}
+#loadermeta.animate-in {
+    transform: translateX(0);
+}
+#loadermeta a{
+    color: chartreuse;
 }
 
 #navigation-bar {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    height: 50px;
     width: 100%;
     border-radius: 0;
     background-color: black;
@@ -50,9 +66,8 @@ div.button {
 }
 
 .button {
-    font-size: 3em;
+    font-size: 1em;
     min-width: 64px;
-    height: 64px;
     padding: 3px 10px;
     text-align: center;
     border-radius: 20px;
