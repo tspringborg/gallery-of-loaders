@@ -13,8 +13,8 @@ Change `index.json` to only include your newly created loader path
 Run `./index.html` in a webserver however you like
 
 ```
-## Example with python2
-python2 -m http.server
+## Example with python
+python3 -m http.server
 ```
 
 Work on your loader until satisfied.
