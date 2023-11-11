@@ -42,10 +42,10 @@ iframe.onload = function () {
     });
     const meta = document.getElementById('loadermeta');
     meta.innerHTML = `
-        <span>${currentIndex+1}/${paths.length}</span>
         ${ loaderMeta.title ? `<h2>${loaderMeta.title}</h2>`: ''}
         ${loaderMeta.loader_about ? `<p>${loaderMeta.loader_about}</p>` : ''}
-        ${loaderMeta.loader_link ? `<a href="loaderMeta.loader_link" target="_blank">${loaderMeta.loader_link}</a>` : ''}
+        ${loaderMeta.loader_link ? `<a href="${loaderMeta.loader_link}" target="_blank">${loaderMeta.loader_link}</a>` : ''}
+        <div><p>${currentIndex+1}/${paths.length}</p></div>
     `
     meta.classList.remove('animate-in')
     overlayFadeOut();
