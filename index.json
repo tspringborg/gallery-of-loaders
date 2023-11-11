@@ -2,5 +2,7 @@
   "cat-loader",
   "example-loader",
   "jelly-box",
-  "materialui-like-spinner"
+  "materialui-like-spinner",
+  "moon-cycles",
+  "pulsing-sphere"
 ]
