@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- title will be displayed in loader info -->
+    <title>Circle Illusion</title>
+    <!-- about will be displayed in loader info -->
+    <meta name="loader_about" content="By Jon Kantner">
+    <!-- clickable link in loader info -->
+    <meta name="loader_link" content="https://codepen.io/jkantner">
+    <!-- control the duration this loader should be displayed. Max 11000(ms) -->
+    <meta name="loader_duration" content="7000">
+</head>
+
+<body>
+<main>
+    <div class="circle">
+        <div class="circle">
+            <div class="circle">
+                <div class="circle">
+                    <div class="circle">
+                        <div class="circle">
+                            <div class="circle">
+                                <div class="circle">
+                                    <div class="circle">
+                                        <div class="circle"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+<style>
+    * {
+        border: 0;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    :root {
+        --hue: 223;
+        --bg: hsl(var(--hue),10%,90%);
+        --fg: hsl(var(--hue),10%,10%);
+        font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+    }
+    body {
+        background-color: var(--bg);
+        color: var(--fg);
+        font: 1em/1.5 sans-serif;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    main {
+        padding: 1.5em 0;
+    }
+    .circle {
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 16em;
+        height: 16em;
+        transform-origin: 50% 19.1%;
+    }
+    .circle > .circle {
+        animation: circle 6s linear infinite;
+        width: 61.8%;
+        height: 61.8%;
+    }
+
+    /* Dark theme */
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --bg: hsl(var(--hue),10%,10%);
+            --fg: hsl(var(--hue),10%,90%);
+        }
+    }
+
+    /* Animations */
+    @keyframes circle {
+        from { transform: rotate(0); }
+        to { transform: rotate(1turn); }
+    }
+</style>
+</html>
