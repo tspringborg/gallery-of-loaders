@@ -3,7 +3,7 @@ let paths = [];
 let currentIndex = 0;
 let nextTimer;
 let loaderMeta = {}
-let timerEnabled = false;
+let timerEnabled = true;
 
 const overlayDiv = document.createElement('div');
 overlayDiv.style.position = 'fixed';
