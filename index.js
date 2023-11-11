@@ -3,7 +3,7 @@ let paths = [];
 let currentIndex = 0;
 let nextTimer;
 let loaderMeta = {}
-let timerEnabled = true;
+let timerEnabled = false;
 
 const overlayDiv = document.createElement('div');
 overlayDiv.style.position = 'fixed';
@@ -27,7 +27,7 @@ iframe.onload = function () {
     const contentDocument = iframe.contentDocument || iframe.contentWindow.document;
 
     // Access the title tag in the head of the HTML document
-    const title = contentDocument.head.querySelector('title');
+    const title = contentDocument.head.querySelector('title').innerHTML;
     // Access the meta tags in the head of the HTML document
     const metaTags = contentDocument.head.querySelectorAll('meta');
 
@@ -40,7 +40,13 @@ iframe.onload = function () {
             loaderMeta[name] = content;
         }
     });
-    console.log(loaderMeta);
+    const meta = document.getElementById('loadermeta');
+    meta.innerHTML = `
+        <span>${currentIndex+1}/${paths.length}</span>
+        ${ loaderMeta.title ? `<h2>${loaderMeta.title}</h2>`: ''}
+        ${loaderMeta.loader_about ? `<p>${loaderMeta.loader_about}</p>` : ''}
+        ${loaderMeta.loader_link ? `<a href="loaderMeta.loader_link" target="_blank">${loaderMeta.loader_link}</a>` : ''}
+    `
     overlayFadeOut();
     if (timerEnabled) startTimer();
 };
@@ -62,7 +68,6 @@ function stepIndex(step) {
         next = paths.length - next;
     }
     next = next % paths.length;
-    console.log(next);
     return next;
 }
 

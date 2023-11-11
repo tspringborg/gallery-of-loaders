@@ -13,10 +13,13 @@
     <iframe id="content-iframe" src=""></iframe>
   </div>
     <iframe id="iframe-preload" src=""></iframe>
-  <div id="navigation-bar" class="box">
-    <div class="button" id="left-arrow" onclick="navigate(-1)">◄</div>
-    <button class="button" onclick="navigateRandom()">Random</button>
-    <div class="button" id="right-arrow" onclick="navigate(1)">►</div>
+  <div id="nav-bar-container">
+    <div id="loadermeta"></div>
+    <div id="navigation-bar">
+      <div class="button" id="left-arrow" onclick="navigate(-1)">◄</div>
+      <button class="button" onclick="navigateRandom()">Random</button>
+      <div class="button" id="right-arrow" onclick="navigate(1)">►</div>
+    </div>
   </div>
   <script src="index.js"></script>
   </body>
