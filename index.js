@@ -69,7 +69,7 @@ function randomIndex() {
 function stepIndex(step) {
     let next = currentIndex + step;
     if (next < 0) {
-        next = paths.length - next;
+        next = paths.length - next + 1;
     }
     next = next % paths.length;
     return next;
