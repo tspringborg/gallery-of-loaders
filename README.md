@@ -1,5 +1,5 @@
 # Gallery of loaders
-A place too keep old loaders for public viewing.
+A place to keep old loaders for public viewing.
 
 [https://tspringborg.github.io/gallery-of-loaders/](https://tspringborg.github.io/gallery-of-loaders/)
 
