@@ -21,4 +21,4 @@ Work on your loader until satisfied.
 
 Make a PR with your changes, omitting `index.json`
 
-Thanks! :)
+Thanks!
